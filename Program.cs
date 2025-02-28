@@ -1,27 +1,32 @@
 ﻿// Создаем список строк
-List<string> specialization = new List<string>();
+List<string> specializations = new List<string>()
+    {"Боец","Маг","Бродяга"};
 
 // Добавляем элементы
-specialization.Add("Fighter");
-specialization.Add("Thief");
-specialization.Add("Mage");
+/* specialization.Add("Combat");
+specialization.Add("Magic");
+specialization.Add("Stealth"); */
 
 
 // Создаем объект Random
 Random random = new Random();
+
 // Генерируем случайное число от 0 до 2 (включительно)
 int randomNumber = random.Next(0, 3);
 // Выводим результат
-Console.WriteLine(specialization[randomNumber]);
+string specialization = specializations[randomNumber];
+Console.WriteLine(specialization);
 
-//string filePath = "example.txt";
 
+// ЗАПИСЫВАЕМ СГЕНЕРИРОВАННОЕ В ФАЙЛ
+
+string filePath = "example.txt";
 // Используем StreamWriter для записи в файл
-/* using (StreamWriter writer = new StreamWriter(filePath))
+using (StreamWriter writer = new StreamWriter(filePath))
 {
-    writer.WriteLine("Первая строка");
-    writer.WriteLine("Вторая строка");
-    writer.WriteLine("Третья строка2");
+    writer.WriteLine("СПЕЦИАЛИЗАЦИЯ:");
+    writer.WriteLine(specialization);
+    writer.WriteLine("");
 }
 
-Console.WriteLine("Файл успешно создан и данные записаны."); */
+Console.WriteLine("Файл успешно создан и данные записаны.");
