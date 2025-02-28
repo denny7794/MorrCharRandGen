@@ -17,16 +17,25 @@ System.Console.WriteLine(attribute1);
 string attribute2 = chooseParameter(attributes);
 System.Console.WriteLine(attribute2);
 
+List<string> skills = new List<string>()
+    {"Защита", "Зачарование", "Безопасность",
+    "Кузнец", "Разрушение", "Скрытность",
+    "Средние доспехи", "Изменения", "Акробатика",
+    "Тяжелые доспехи", "Иллюзии", "Легкие доспехи",
+    "Дробящее оружие", "Колдовство", "Короткие клинки",
+    "Длинные клинки", "Мистицизм", "Меткость",
+    "Секиры", "Восстановление", "Торговля",
+    "Древковое оружие", "Алхимия", "Красноречие",
+    "Атлетика", "Бездоспешный бой", "Рукопашный бой"};
 
+List<string> majorSkills = new List<string>();
+List<string> minorSkills = new List<string>();
 
-/* // Создаем объект Random
-Random random = new Random();
-
-// Генерируем случайное число от 0 до последнего индекса коллекции
-int randomNumber = random.Next(0, specializations.Count);
-// Выводим результат
-string specialization = specializations[randomNumber];
-Console.WriteLine(specialization); */
+for (int i = 0; i < 5; i++)
+{
+    majorSkills.Add(chooseParameter(skills));
+    minorSkills.Add(chooseParameter(skills));
+}
 
 
 
@@ -46,6 +55,19 @@ using (StreamWriter writer = new StreamWriter(filePath))
     writer.WriteLine(attribute1);
     writer.WriteLine(attribute2);
     writer.WriteLine("");
+    writer.WriteLine("ГЛАВНЫЕ НАВЫКИ:");
+    foreach (var skill in majorSkills)
+    {
+        writer.WriteLine(skill);
+    }
+    writer.WriteLine("");
+    writer.WriteLine("ВАЖНЫЕ НАВЫКИ:");
+    foreach (var skill in minorSkills)
+    {
+        writer.WriteLine(skill);
+    }
+    writer.WriteLine("");
+
 }
 
 Console.WriteLine("Файл успешно создан и данные записаны.");
