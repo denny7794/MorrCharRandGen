@@ -5,6 +5,12 @@ List<string> genders = new List<string>()
 string gender = chooseParameter(genders);
 System.Console.WriteLine(gender);
 
+List<string> races = new List<string>()
+    {"Аргониание","Бретон", "Высокий эльф", "Имперец", "Лесной эльф",
+    "Нордлинг", "Орк", "Темный эльф", "Хаджит"};
+string race = chooseParameter(races);
+System.Console.WriteLine(race);
+
 List<string> specializations = new List<string>()
     {"Боец","Маг","Бродяга"};
 string specialization = chooseParameter(specializations);
@@ -47,6 +53,9 @@ using (StreamWriter writer = new StreamWriter(filePath))
 {
     writer.WriteLine("ПОЛ:");
     writer.WriteLine(gender);
+    writer.WriteLine("");
+    writer.WriteLine("РАСА:");
+    writer.WriteLine(race);
     writer.WriteLine("");
     writer.WriteLine("СПЕЦИАЛИЗАЦИЯ:");
     writer.WriteLine(specialization);
