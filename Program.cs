@@ -10,6 +10,13 @@ List<string> specializations = new List<string>()
 string specialization = chooseParameter(specializations);
 System.Console.WriteLine(specialization);
 
+List<string> attributes = new List<string>()
+    {"Сила","Интеллект","Сила воли", "Ловкость", "Скорость", "Выносливость", "Привлекательность", "Удача"};
+string attribute1 = chooseParameter(attributes);
+System.Console.WriteLine(attribute1);
+string attribute2 = chooseParameter(attributes);
+System.Console.WriteLine(attribute2);
+
 
 
 /* // Создаем объект Random
@@ -34,6 +41,10 @@ using (StreamWriter writer = new StreamWriter(filePath))
     writer.WriteLine("");
     writer.WriteLine("СПЕЦИАЛИЗАЦИЯ:");
     writer.WriteLine(specialization);
+    writer.WriteLine("");
+    writer.WriteLine("ГЛАВНЫЕ ХАРАКТЕРИСТИКИ:");
+    writer.WriteLine(attribute1);
+    writer.WriteLine(attribute2);
     writer.WriteLine("");
 }
 
