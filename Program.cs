@@ -1,21 +1,21 @@
 ﻿// Создаем список строк
+
 List<string> specializations = new List<string>()
     {"Боец","Маг","Бродяга"};
 
-// Добавляем элементы
-/* specialization.Add("Combat");
-specialization.Add("Magic");
-specialization.Add("Stealth"); */
+string specialization = chooseParameter(specializations);
+System.Console.WriteLine(specialization);
 
 
-// Создаем объект Random
+/* // Создаем объект Random
 Random random = new Random();
 
-// Генерируем случайное число от 0 до 2 (включительно)
+// Генерируем случайное число от 0 до последнего индекса коллекции
 int randomNumber = random.Next(0, specializations.Count);
 // Выводим результат
 string specialization = specializations[randomNumber];
-Console.WriteLine(specialization);
+Console.WriteLine(specialization); */
+
 
 
 // ЗАПИСЫВАЕМ СГЕНЕРИРОВАННОЕ В ФАЙЛ
@@ -30,3 +30,12 @@ using (StreamWriter writer = new StreamWriter(filePath))
 }
 
 Console.WriteLine("Файл успешно создан и данные записаны.");
+
+string chooseParameter(List<string> list)
+{
+    Random random = new Random();
+    int index = random.Next(0, list.Count);
+    string result = list[index];
+    list.RemoveAt(index);
+    return result;
+}
