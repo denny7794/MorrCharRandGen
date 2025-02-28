@@ -12,7 +12,7 @@ specialization.Add("Stealth"); */
 Random random = new Random();
 
 // Генерируем случайное число от 0 до 2 (включительно)
-int randomNumber = random.Next(0, 3);
+int randomNumber = random.Next(0, specializations.Count);
 // Выводим результат
 string specialization = specializations[randomNumber];
 Console.WriteLine(specialization);
@@ -20,7 +20,7 @@ Console.WriteLine(specialization);
 
 // ЗАПИСЫВАЕМ СГЕНЕРИРОВАННОЕ В ФАЙЛ
 
-string filePath = "example.txt";
+string filePath = "RandChar.txt";
 // Используем StreamWriter для записи в файл
 using (StreamWriter writer = new StreamWriter(filePath))
 {
