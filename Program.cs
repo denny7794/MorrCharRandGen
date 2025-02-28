@@ -43,7 +43,12 @@ for (int i = 0; i < 5; i++)
     minorSkills.Add(chooseParameter(skills));
 }
 
-
+List<string> birthsigns = new List<string>()
+    {"Атронах (М)","Атронах (С)", "Башня (М)", "Башня (С)", "Воин (М)", "Воин (С)", "Вор (М)", "Вор (С)", "Змея",
+    "Конь (М)", "Конь (С)", "Леди (М)", "Леди (С)", "Лорд (М)", "Лорд (С)", "Любовник (М)", "Любовник (С)",
+    "Маг (М)", "Маг (С)", "Подмастерье (М)", "Подмастерье (С)", "Ритуал (М)", "Ритуал (С)", "Тень (М)", "Тень (С)"};
+string birthsign = chooseParameter(birthsigns);
+System.Console.WriteLine(birthsign);
 
 // ЗАПИСЫВАЕМ СГЕНЕРИРОВАННОЕ В ФАЙЛ
 
@@ -76,10 +81,13 @@ using (StreamWriter writer = new StreamWriter(filePath))
         writer.WriteLine(skill);
     }
     writer.WriteLine("");
+    writer.WriteLine("ЗНАК РОЖДЕНИЯ:");
+    writer.WriteLine(birthsign);
 
 }
 
 Console.WriteLine("Файл успешно создан и данные записаны.");
+
 
 string chooseParameter(List<string> list)
 {
