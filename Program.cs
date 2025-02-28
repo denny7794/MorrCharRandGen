@@ -1,10 +1,15 @@
 ﻿// Создаем список строк
 
+List<string> genders = new List<string>()
+    {"Мужской","Женский"};
+string gender = chooseParameter(genders);
+System.Console.WriteLine(gender);
+
 List<string> specializations = new List<string>()
     {"Боец","Маг","Бродяга"};
-
 string specialization = chooseParameter(specializations);
 System.Console.WriteLine(specialization);
+
 
 
 /* // Создаем объект Random
@@ -24,6 +29,9 @@ string filePath = "RandChar.txt";
 // Используем StreamWriter для записи в файл
 using (StreamWriter writer = new StreamWriter(filePath))
 {
+    writer.WriteLine("ПОЛ:");
+    writer.WriteLine(gender);
+    writer.WriteLine("");
     writer.WriteLine("СПЕЦИАЛИЗАЦИЯ:");
     writer.WriteLine(specialization);
     writer.WriteLine("");
